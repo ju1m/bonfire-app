@@ -2,11 +2,11 @@
   # the name of the package
   app_name = "bonfire";
   # the version of the package
-  app_version = "0.3.0-classic-beta.7";
+  app_version = "v1.0.0-rc.3.23";
   # version release of elixir
-  elixir_release = "1.13";
+  elixir_release = "1.18";
   # version release of erlang
-  erlang_release = "24";
+  erlang_release = "28";
 
   # remove dotenv variables POSTGRES_* to use these!
   PGUSERNAME = "bonfire";
