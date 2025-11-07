@@ -23,7 +23,7 @@
       # set elixir nix version
       elixir_nix_version =
         elixir_version: builtins.replaceStrings [ "." ] [ "_" ] "elixir_${elixir_version}";
-      erlang_nix_version = erlang_version: "erlangR${erlang_version}";
+      erlang_nix_version = erlang_version: "erlang_${erlang_version}";
     in
     flake-utils.lib.eachSystem flake-utils.lib.defaultSystems (
       system:
