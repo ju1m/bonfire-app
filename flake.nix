@@ -73,7 +73,21 @@
         # src of the project
         src = ./.;
         # mix2nix dependencies
-        mixNixDeps = import ./deps.nix { inherit lib beamPackages; };
+        mixNixDeps = import ./deps.nix {
+          inherit lib beamPackages;
+          overrides = lib.composeManyExtensions (
+            lib.map
+              (
+                path:
+                pkgs.callPackage path {
+                  elixir = pkgs.${elixir_nix_version props.elixir_release};
+                  inherit beamPackages;
+                }
+              )
+              [
+              ]
+          );
+        };
 
         # mix release definition
         release-prod = beamPackages.mixRelease {
@@ -107,6 +121,7 @@
         packages = {
           prod = release-prod;
           dev = release-dev;
+          inherit mixNixDeps pkgs;
           container = pkgs.dockerTools.buildImage {
             name = pname;
             tag = packages.prod.version;
