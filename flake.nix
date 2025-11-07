@@ -86,6 +86,7 @@
               )
               [
                 nix/mixNixDeps/exqlite.nix
+                nix/mixNixDeps/lazy_html.nix
                 nix/mixNixDeps/untangle.nix
               ]
           );
