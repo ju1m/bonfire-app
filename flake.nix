@@ -72,6 +72,7 @@
 
         # src of the project
         src = ./.;
+
         # mix2nix dependencies
         mixNixDeps = import ./deps.nix {
           inherit lib beamPackages;
@@ -85,6 +86,7 @@
                 }
               )
               [
+                nix/mixNixDeps/evision.nix
                 nix/mixNixDeps/exqlite.nix
                 nix/mixNixDeps/lazy_html.nix
                 nix/mixNixDeps/untangle.nix
