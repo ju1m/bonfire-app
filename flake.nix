@@ -85,6 +85,7 @@
                 }
               )
               [
+                nix/mixNixDeps/exqlite.nix
                 nix/mixNixDeps/untangle.nix
               ]
           );
