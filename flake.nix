@@ -86,6 +86,7 @@
                 }
               )
               [
+                nix/mixNixDeps/autumn.nix
                 nix/mixNixDeps/evision.nix
                 nix/mixNixDeps/exqlite.nix
                 nix/mixNixDeps/lazy_html.nix
