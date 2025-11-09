@@ -93,6 +93,7 @@
                 nix/mixNixDeps/mdex.nix
                 nix/mixNixDeps/mjml.nix
                 nix/mixNixDeps/untangle.nix
+                nix/mixNixDeps/vix.nix
               ]
           );
         };
