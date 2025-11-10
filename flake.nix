@@ -16,7 +16,7 @@
       nixpkgs,
       flake-utils,
       ...
-    }:
+    }@inputs:
     let
       # props to hold settings to apply on this file like name and version
       props = import ./props.nix;
@@ -82,10 +82,12 @@
                 path:
                 pkgs.callPackage path {
                   elixir = pkgs.${elixir_nix_version props.elixir_release};
-                  inherit beamPackages;
+                  inherit beamPackages inputs;
                 }
               )
               [
+                nix/mixNixDeps/extra-deps-sources.nix
+                nix/mixNixDeps/extra-deps-fixes.nix
                 nix/mixNixDeps/autumn.nix
                 nix/mixNixDeps/evision.nix
                 nix/mixNixDeps/exqlite.nix
@@ -109,8 +111,9 @@
             elixir
             ;
           mixEnv = "prod";
+          env.FLAVOUR = "social";
 
-          installPhase = installHook { release = "prod"; };
+          #installPhase = installHook { release = "bonfire"; };
         };
 
         release-dev = beamPackages.mixRelease {
@@ -122,6 +125,7 @@
             elixir
             ;
           mixEnv = "dev";
+          env.FLAVOUR = "social";
           enableDebugInfo = true;
           installPhase = installHook { release = "dev"; };
         };
@@ -131,6 +135,7 @@
         packages = {
           prod = release-prod;
           dev = release-dev;
+          inherit beamPackages;
           inherit mixNixDeps pkgs;
           container = pkgs.dockerTools.buildImage {
             name = pname;
