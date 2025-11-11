@@ -93,7 +93,7 @@
                 nix/mixNixDeps/mdex.nix
                 nix/mixNixDeps/mjml.nix
                 nix/mixNixDeps/phoenix_test.nix
-                nix/mixNixDeps/untangle.nix
+                nix/mixNixDeps/uuidv7.nix
                 nix/mixNixDeps/vix.nix
               ]
           );
