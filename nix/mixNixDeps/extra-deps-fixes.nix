@@ -20,15 +20,52 @@ let
 in
 finalMixPkgs: previousMixPkgs: {
   connection = null;
-  bonfire_data_edges = previousMixPkgs.bonfire_data_edges.override {
-    beamDeps = with finalMixPkgs; [ needle ];
-  };
+  bonfire_data_activity_pub =
+    previousMixPkgs.bonfire_data_activity_pub.overrideAttrs
+      (previousAttrs: {
+        # Explanation: missing transitive dependency in upstream's deps.hex…
+        postPatch = previousAttrs.postPatch or "" + ''
+          cat >>deps.hex <<EOF
+
+          typed_ecto_schema = ">= 0.0.0"
+          EOF
+        '';
+      });
+  bonfire_data_edges = previousMixPkgs.bonfire_data_edges.overrideAttrs (previousAttrs: {
+    # Explanation: missing transitive dependency in upstream's deps.hex…
+    postPatch = previousAttrs.postPatch or "" + ''
+      cat >>deps.hex <<EOF
+
+      typed_ecto_schema = ">= 0.0.0"
+      EOF
+    '';
+  });
   bonfire_data_identity = previousMixPkgs.bonfire_data_identity.override {
   };
-  bonfire_common = previousMixPkgs.bonfire_common.override {
-  };
-  bonfire_api_graphql = previousMixPkgs.bonfire_api_graphql.override {
-  };
+
+  bonfire_data_access_control =
+    (previousMixPkgs.bonfire_data_access_control.override (previousArgs: {
+      beamDeps =
+        previousArgs.beamDeps
+        ++ (with finalMixPkgs; [
+          # Explanation: missing dependency in upstream deps.hex…
+          typed_ecto_schema
+        ]);
+    })).overrideAttrs
+      (previousAttrs: {
+        postPatch = previousAttrs.postPatch or "" + ''
+          cat >>deps.hex <<EOF
+
+          typed_ecto_schema = ">= 0.0.0"
+          EOF
+        '';
+      });
+  /*
+    bonfire_common = previousMixPkgs.bonfire_common.override {
+    };
+    bonfire_api_graphql = previousMixPkgs.bonfire_api_graphql.override {
+    };
+  */
   needle = previousMixPkgs.needle.override {
     beamDeps = with finalMixPkgs; [
       accessible

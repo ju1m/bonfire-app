@@ -75,7 +75,34 @@
 
         # mix2nix dependencies
         mixNixDeps = import ./deps.nix {
-          inherit lib beamPackages;
+          inherit lib pkgs;
+          beamPackages = beamPackages // {
+            buildMix =
+              args:
+              beamPackages.buildMix (
+                args
+                // {
+                  postPatch = ''
+                    # Explanation: some mess.exs are outdated wrt. bonfire-app/lib/mix/mess.exs
+                    # causing mix deps.tree to fail…
+                    if grep -qF Mess mix.exs; then
+                      ln -fns \${lib/mix/mess.exs} mess.exs
+                      # Explanation: some mix.exs depend on mess.exs but do not load it…
+                      sed -i mix.exs -e 's/^ *# *Code.eval_file(\"mess.exs\"/Code.eval_file(\"mess.exs\"/'
+                    fi
+                  '';
+                }
+              );
+          };
+          overrideFenixOverlay = finalPkgs: previousPkgs: {
+            # Explanation: deps_nix generates a deps.nix assuming fenix is used,
+            # but rustc and cargo from nixpkgs are enough and more likely already in anyone's Nix store.
+            fenix = {
+              stable = {
+                inherit (pkgs) rustc cargo;
+              };
+            };
+          };
           overrides = lib.composeManyExtensions (
             lib.map
               (
@@ -86,17 +113,17 @@
                 }
               )
               [
-                nix/mixNixDeps/extra-deps-sources.nix
+                #nix/mixNixDeps/extra-deps-sources.nix
                 nix/mixNixDeps/extra-deps-fixes.nix
                 nix/mixNixDeps/autumn.nix
-                nix/mixNixDeps/evision.nix
-                nix/mixNixDeps/exqlite.nix
+                #nix/mixNixDeps/evision.nix
+                #nix/mixNixDeps/exqlite.nix
                 nix/mixNixDeps/lazy_html.nix
                 nix/mixNixDeps/mdex.nix
                 nix/mixNixDeps/mjml.nix
-                nix/mixNixDeps/phoenix_test.nix
+                #nix/mixNixDeps/phoenix_test.nix
                 nix/mixNixDeps/uuidv7.nix
-                nix/mixNixDeps/vix.nix
+                #nix/mixNixDeps/vix.nix
               ]
           );
         };
@@ -112,6 +139,7 @@
             ;
           mixEnv = "prod";
           env.FLAVOUR = "social";
+          configurePhase = "";
 
           #installPhase = installHook { release = "bonfire"; };
         };
@@ -155,6 +183,11 @@
             args = [ "${packages.prod}/bin/prod" ];
           };
           default = packages.prod;
+          deps_nix = beamPackages.buildMix {
+            name = "deps_nix";
+            src = nix/deps_nix;
+            beamDeps = lib.attrValues (pkgs.callPackages nix/deps_nix/deps.nix { });
+          };
         };
 
         # apps to run with nix run
@@ -175,6 +208,9 @@
         # Module for deployment
         nixosModules.bonfire = import ./nix/module.nix;
         nixosModule = nixosModules.bonfire;
+
+        devShells.nix = pkgs.mkShell {
+        };
 
         devShells.default = pkgs.mkShell {
 

@@ -144,6 +144,10 @@ defmodule Bonfire.Umbrella.MixProject do
       maybe_xmpp_deps ++
       maybe_non_ci_deps ++
       [
+        {
+          :deps_nix,
+          path: "nix/deps_nix",
+        },
         # TODO: move most of these deps to ember or elsewhere?
         {
           :mess,
