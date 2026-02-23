@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.38.4">
+    <meta name="project" content="Bonfire v1.0.2-social-alpha.31">
+
+
+    <title>Bonfire.Common.Media — Bonfire v1.0.2-social-alpha.31</title>
+
+    <link rel="stylesheet" href="dist/html-elixir-RLZO5U2C.css" />
+
+    <script defer src="dist/sidebar_items-089BA984.js"></script>
+    <script defer src="docs_config.js"></script>
+    <script defer src="dist/html-Y223O6DN.js"></script>
+
+  </head>
+  <body>
+    <script>(()=>{var t="ex_doc:settings",e="dark";var o="dark",s="light";var E="sidebar_state",n="closed";var r="sidebar_width";var a="sidebar-open";var i=new URLSearchParams(window.location.search),S=i.get("theme")||JSON.parse(localStorage.getItem(t)||"{}").theme;(S===o||S!==s&&window.matchMedia("(prefers-color-scheme: dark)").matches)&&document.body.classList.add(e);var d=sessionStorage.getItem(E),A=d!==n&&!window.matchMedia(`screen and (max-width: ${768}px)`).matches;document.body.classList.toggle(a,A);var c=sessionStorage.getItem(r);c&&document.body.style.setProperty("--sidebarWidth",`${c}px`);var p=/(Macintosh|iPhone|iPad|iPod)/.test(window.navigator.userAgent);document.documentElement.classList.toggle("apple-os",p);})();
+</script>
+
+<div class="body-wrapper">
+
+<button id="sidebar-menu" class="sidebar-button sidebar-toggle" aria-label="toggle sidebar" aria-controls="sidebar">
+  <i class="ri-menu-line ri-lg" title="Collapse/expand sidebar"></i>
+</button>
+
+<nav id="sidebar" class="sidebar">
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectInfo">
+
+        <a href="https://bonfirenetworks.org" class="sidebar-projectImage">
+          <img src="assets/logo.png" alt="Bonfire" />
+        </a>
+
+      <div>
+        <a href="https://bonfirenetworks.org" class="sidebar-projectName" translate="no">
+Bonfire
+        </a>
+        <div class="sidebar-projectVersion" translate="no">
+          v1.0.2-social-alpha.31
+        </div>
+      </div>
+    </div>
+    <ul id="sidebar-list-nav" class="sidebar-list-nav" role="tablist" data-extras=""></ul>
+  </div>
+</nav>
+
+<output role="status" id="toast"></output>
+
+<main class="content page-module" id="main" data-type="modules">
+  <div id="content" class="content-inner">
+    <div class="top-search">
+      <div class="search-settings">
+        <form class="search-bar" action="search.html">
+          <label class="search-label">
+            <span class="sr-only">Search documentation of Bonfire</span>
+            <input name="q" type="text" class="search-input" placeholder="Press / to search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </label>
+          <button type="submit" class="search-button" aria-label="Submit Search" tabindex="-1">
+            <i class="ri-search-2-line ri-lg" aria-hidden="true"></i>
+          </button>
+          <button type="button" tabindex="-1" class="search-close-button" aria-hidden="true">
+            <i class="ri-close-line ri-lg" title="Cancel search"></i>
+          </button>
+        </form>
+        <div class="autocomplete">
+        </div>
+        <button class="icon-settings display-settings">
+          <i class="ri-settings-3-line"></i>
+          <span class="sr-only">Settings</span>
+        </button>
+      </div>
+    </div>
+
+<div id="top-content">
+  <div class="heading-with-actions top-heading">
+    <h1>
+      <span translate="no">Bonfire.Common.Media</span> 
+      <small class="app-vsn" translate="no">(Bonfire v1.0.2-social-alpha.31)</small>
+
+    </h1>
+
+      <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L1" title="View Source" class="icon-action" rel="help">
+        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        <span class="sr-only">View Source</span>
+      </a>
+
+  </div>
+
+
+    <section id="moduledoc">
+<p>Helpers for handling images and other media</p>
+    </section>
+
+</div>
+
+  <section id="summary" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#summary">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Summary</span>
+    </h1>
+<div class="summary-functions summary">
+  <h2>
+    <a href="#functions">Functions</a>
+  </h2>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#avatar_fallback/1" data-no-tooltip="" translate="no">avatar_fallback(_ \\ nil)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#avatar_url/2" data-no-tooltip="" translate="no">avatar_url(url, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Takes a Media map (or an object containing one) and returns the avatar's URL.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#banner_fallback/0" data-no-tooltip="" translate="no">banner_fallback()</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#banner_url/2" data-no-tooltip="" translate="no">banner_url(media, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Takes a Media map (or an object containing one) and returns the banner's URL.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#emoji_url/2" data-no-tooltip="" translate="no">emoji_url(media, opts \\ [])</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#extract_tar/2" data-no-tooltip="" translate="no">extract_tar(archive, opts \\ [:compressed, :memory])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Returns a map containing all files and their contents from a tar or compressed tar.gz archive.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#hide_avatars?/2" data-no-tooltip="" translate="no">hide_avatars?(context, showing_within \\ nil)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#image_url/2" data-no-tooltip="" translate="no">image_url(url, opts \\ [])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Takes a Media map (or an object containing one) and returns the image's URL.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#maybe_dominant_color/4" data-no-tooltip="" translate="no">maybe_dominant_color(user, avatar_url \\ nil, banner_url \\ nil, banner_fallback \\ nil)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Determines the dominant color for a given user’s avatar or banner.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#media_url/1" data-no-tooltip="" translate="no">media_url(media)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Takes a Media map (or an object containing one) and returns a URL for the media.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#read_tar_files/3" data-no-tooltip="" translate="no">read_tar_files(archive, file_or_files, opts \\ [:compressed, :verbose])</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Reads specific files from a tar archive and returns their contents.</p></div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#thumbnail_url/1" data-no-tooltip="" translate="no">thumbnail_url(media)</a>
+
+      </div>
+
+        <div class="summary-synopsis"><p>Takes a Media map (or an object containing one) and returns the thumbnail's URL.</p></div>
+
+    </div>
+
+</div>
+
+  </section>
+
+
+  <section id="functions" class="details-list">
+    <h1 class="section-heading">
+      <a class="hover-link" href="#functions">
+        <i class="ri-link-m" aria-hidden="true"></i>
+      </a>
+      <span class="text">Functions</span>
+    </h1>
+
+    <div class="functions-list">
+<section class="detail" id="avatar_fallback/1">
+
+    <span id="avatar_fallback/0"></span>
+
+  <div class="detail-header">
+    <a href="#avatar_fallback/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">avatar_fallback(_ \\ nil)</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L275" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="avatar_url/2">
+
+    <span id="avatar_url/1"></span>
+
+  <div class="detail-header">
+    <a href="#avatar_url/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">avatar_url(url, opts \\ [])</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L195" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Takes a Media map (or an object containing one) and returns the avatar's URL.</p><h2 id="avatar_url/2-examples" class="section-heading"><a href="#avatar_url/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">avatar_url</span><span class="p" data-group-id="6849499975-1">(</span><span class="p" data-group-id="6849499975-2">%{</span><span class="ss">profile</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6849499975-3">%{</span><span class="ss">icon</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6849499975-4">%{</span><span class="ss">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/avatar.png&quot;</span><span class="p" data-group-id="6849499975-4">}</span><span class="p" data-group-id="6849499975-3">}</span><span class="p" data-group-id="6849499975-2">}</span><span class="p" data-group-id="6849499975-1">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/avatar.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">avatar_url</span><span class="p" data-group-id="6849499975-5">(</span><span class="p" data-group-id="6849499975-6">%{</span><span class="ss">icon</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6849499975-7">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/path.png&quot;</span><span class="p" data-group-id="6849499975-7">}</span><span class="p" data-group-id="6849499975-6">}</span><span class="p" data-group-id="6849499975-5">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/path.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">avatar_url</span><span class="p" data-group-id="6849499975-8">(</span><span class="p" data-group-id="6849499975-9">%{</span><span class="ss">icon_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;icon123&quot;</span><span class="p" data-group-id="6849499975-9">}</span><span class="p" data-group-id="6849499975-8">)</span><span class="w">
+</span><span class="c1"># Assume Files.IconUploader.remote_url/1 returns &quot;http://example.com/icon123.png&quot;</span><span class="w">
+</span><span class="s">&quot;http://example.com/icon123.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">avatar_url</span><span class="p" data-group-id="6849499975-10">(</span><span class="p" data-group-id="6849499975-11">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;image.jpg&quot;</span><span class="p" data-group-id="6849499975-11">}</span><span class="p" data-group-id="6849499975-10">)</span><span class="w">
+</span><span class="c1"># Assume Files.IconUploader.remote_url/1 returns &quot;http://example.com/image.jpg&quot;</span><span class="w">
+</span><span class="s">&quot;http://example.com/image.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">avatar_url</span><span class="p" data-group-id="6849499975-12">(</span><span class="p" data-group-id="6849499975-13">%{</span><span class="ss">icon</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/icon.png&quot;</span><span class="p" data-group-id="6849499975-13">}</span><span class="p" data-group-id="6849499975-12">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/icon.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">avatar_url</span><span class="p" data-group-id="6849499975-14">(</span><span class="p" data-group-id="6849499975-15">%{</span><span class="ss">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="p" data-group-id="6849499975-15">}</span><span class="p" data-group-id="6849499975-14">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">avatar_url</span><span class="p" data-group-id="6849499975-16">(</span><span class="p" data-group-id="6849499975-17">%{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;user123&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">shared_user</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p" data-group-id="6849499975-17">}</span><span class="p" data-group-id="6849499975-16">)</span><span class="w">
+</span><span class="c1"># Assume avatar_fallback/1 returns &quot;/images/avatar.png&quot;</span><span class="w">
+</span><span class="s">&quot;/images/avatar.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">avatar_url</span><span class="p" data-group-id="6849499975-18">(</span><span class="p" data-group-id="6849499975-19">%{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;user456&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">shared_user</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6849499975-20">%{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;shared123&quot;</span><span class="p" data-group-id="6849499975-20">}</span><span class="p" data-group-id="6849499975-19">}</span><span class="p" data-group-id="6849499975-18">)</span><span class="w">
+</span><span class="s">&quot;https://picsum.photos/seed/user456/128/128?blur&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">avatar_url</span><span class="p" data-group-id="6849499975-21">(</span><span class="p" data-group-id="6849499975-22">%{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;user789&quot;</span><span class="p" data-group-id="6849499975-22">}</span><span class="p" data-group-id="6849499975-21">)</span><span class="w">
+</span><span class="c1"># Assume avatar_fallback/1 returns &quot;/images/avatar.png&quot;</span><span class="w">
+</span><span class="s">&quot;/images/avatar.png&quot;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="banner_fallback/0">
+
+  <div class="detail-header">
+    <a href="#banner_fallback/0" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">banner_fallback()</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L439" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="banner_url/2">
+
+    <span id="banner_url/1"></span>
+
+  <div class="detail-header">
+    <a href="#banner_url/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">banner_url(media, opts \\ [])</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L402" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Takes a Media map (or an object containing one) and returns the banner's URL.</p><h2 id="banner_url/2-examples" class="section-heading"><a href="#banner_url/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">banner_url</span><span class="p" data-group-id="1794241836-1">(</span><span class="p" data-group-id="1794241836-2">%{</span><span class="ss">profile</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1794241836-3">%{</span><span class="ss">image</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1794241836-4">%{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;banner123&quot;</span><span class="p" data-group-id="1794241836-4">}</span><span class="p" data-group-id="1794241836-3">}</span><span class="p" data-group-id="1794241836-2">}</span><span class="p" data-group-id="1794241836-1">)</span><span class="w">
+</span><span class="c1"># Assume Files.BannerUploader.remote_url/1 returns &quot;http://example.com/banner123.png&quot;</span><span class="w">
+</span><span class="s">&quot;http://example.com/banner123.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">banner_url</span><span class="p" data-group-id="1794241836-5">(</span><span class="p" data-group-id="1794241836-6">%{</span><span class="ss">image</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1794241836-7">%{</span><span class="ss">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/banner.png&quot;</span><span class="p" data-group-id="1794241836-7">}</span><span class="p" data-group-id="1794241836-6">}</span><span class="p" data-group-id="1794241836-5">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/banner.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">banner_url</span><span class="p" data-group-id="1794241836-8">(</span><span class="p" data-group-id="1794241836-9">%{</span><span class="ss">image</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1794241836-10">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/banner.png&quot;</span><span class="p" data-group-id="1794241836-10">}</span><span class="p" data-group-id="1794241836-9">}</span><span class="p" data-group-id="1794241836-8">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/banner.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">banner_url</span><span class="p" data-group-id="1794241836-11">(</span><span class="p" data-group-id="1794241836-12">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/banner.png&quot;</span><span class="p" data-group-id="1794241836-12">}</span><span class="p" data-group-id="1794241836-11">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/banner.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">banner_url</span><span class="p" data-group-id="1794241836-13">(</span><span class="p" data-group-id="1794241836-14">%{</span><span class="ss">image_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;banner456&quot;</span><span class="p" data-group-id="1794241836-14">}</span><span class="p" data-group-id="1794241836-13">)</span><span class="w">
+</span><span class="c1"># Assume Files.BannerUploader.remote_url/1 returns &quot;http://example.com/banner456.png&quot;</span><span class="w">
+</span><span class="s">&quot;http://example.com/banner456.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">banner_url</span><span class="p" data-group-id="1794241836-15">(</span><span class="p" data-group-id="1794241836-16">%{</span><span class="ss">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/banner.png&quot;</span><span class="p" data-group-id="1794241836-16">}</span><span class="p" data-group-id="1794241836-15">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/banner.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">banner_url</span><span class="p" data-group-id="1794241836-17">(</span><span class="p" data-group-id="1794241836-18">%{</span><span class="ss">profile</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1794241836-19">%{</span><span class="ss">image</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="1794241836-20">%{</span><span class="ss">id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;banner789&quot;</span><span class="p" data-group-id="1794241836-20">}</span><span class="p" data-group-id="1794241836-19">}</span><span class="p" data-group-id="1794241836-18">}</span><span class="p" data-group-id="1794241836-17">)</span><span class="w">
+</span><span class="c1"># Assume Files.BannerUploader.remote_url/1 returns &quot;http://example.com/banner789.png&quot;</span><span class="w">
+</span><span class="s">&quot;http://example.com/banner789.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">banner_url</span><span class="p" data-group-id="1794241836-21">(</span><span class="p" data-group-id="1794241836-22">%{</span><span class="ss">nonexistent_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p" data-group-id="1794241836-22">}</span><span class="p" data-group-id="1794241836-21">)</span><span class="w">
+</span><span class="c1"># Assume banner_fallback/0 returns &quot;/images/bonfires.png&quot;</span><span class="w">
+</span><span class="s">&quot;/images/bonfires.png&quot;</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="emoji_url/2">
+
+    <span id="emoji_url/1"></span>
+
+  <div class="detail-header">
+    <a href="#emoji_url/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">emoji_url(media, opts \\ [])</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L445" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="extract_tar/2">
+
+    <span id="extract_tar/1"></span>
+
+  <div class="detail-header">
+    <a href="#extract_tar/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">extract_tar(archive, opts \\ [:compressed, :memory])</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L506" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Returns a map containing all files and their contents from a tar or compressed tar.gz archive.</p><h2 id="extract_tar/2-examples" class="section-heading"><a href="#extract_tar/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="o">&gt;</span><span class="w"> </span><span class="n">extract_tar</span><span class="p" data-group-id="5908194273-1">(</span><span class="s">&quot;path/to/archive.tar.gz&quot;</span><span class="p" data-group-id="5908194273-1">)</span><span class="w">
+</span><span class="p" data-group-id="5908194273-2">%{</span><span class="s">&quot;file1.txt&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="5908194273-3">&lt;&lt;</span><span class="n">...</span><span class="p" data-group-id="5908194273-3">&gt;&gt;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;file2.txt&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="5908194273-4">&lt;&lt;</span><span class="n">...</span><span class="p" data-group-id="5908194273-4">&gt;&gt;</span><span class="p" data-group-id="5908194273-2">}</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">extract_tar</span><span class="p" data-group-id="5908194273-5">(</span><span class="s">&quot;path/to/archive.tar&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5908194273-6">[</span><span class="ss">:memory</span><span class="p" data-group-id="5908194273-6">]</span><span class="p" data-group-id="5908194273-5">)</span><span class="w">
+</span><span class="p" data-group-id="5908194273-7">%{</span><span class="s">&quot;file1.txt&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="5908194273-8">&lt;&lt;</span><span class="n">...</span><span class="p" data-group-id="5908194273-8">&gt;&gt;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;file2.txt&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="5908194273-9">&lt;&lt;</span><span class="n">...</span><span class="p" data-group-id="5908194273-9">&gt;&gt;</span><span class="p" data-group-id="5908194273-7">}</span><span class="w">
+
+</span><span class="o">&gt;</span><span class="w"> </span><span class="n">extract_tar</span><span class="p" data-group-id="5908194273-10">(</span><span class="s">&quot;path/to/archive.tar&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="5908194273-11">[</span><span class="ss">:compressed</span><span class="p">,</span><span class="w"> </span><span class="ss">:memory</span><span class="p" data-group-id="5908194273-11">]</span><span class="p" data-group-id="5908194273-10">)</span><span class="w">
+</span><span class="p" data-group-id="5908194273-12">%{</span><span class="s">&quot;file1.txt&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="5908194273-13">&lt;&lt;</span><span class="n">...</span><span class="p" data-group-id="5908194273-13">&gt;&gt;</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="s">&quot;file2.txt&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p" data-group-id="5908194273-14">&lt;&lt;</span><span class="n">...</span><span class="p" data-group-id="5908194273-14">&gt;&gt;</span><span class="p" data-group-id="5908194273-12">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="hide_avatars?/2">
+
+    <span id="hide_avatars?/1"></span>
+
+  <div class="detail-header">
+    <a href="#hide_avatars?/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">hide_avatars?(context, showing_within \\ nil)</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L553" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+
+  </section>
+</section>
+<section class="detail" id="image_url/2">
+
+    <span id="image_url/1"></span>
+
+  <div class="detail-header">
+    <a href="#image_url/2" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">image_url(url, opts \\ [])</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L318" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Takes a Media map (or an object containing one) and returns the image's URL.</p><h2 id="image_url/2-examples" class="section-heading"><a href="#image_url/2-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">image_url</span><span class="p" data-group-id="2924539120-1">(</span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="p" data-group-id="2924539120-1">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">image_url</span><span class="p" data-group-id="2924539120-2">(</span><span class="p" data-group-id="2924539120-3">%{</span><span class="ss">media_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;text/plain&quot;</span><span class="p" data-group-id="2924539120-3">}</span><span class="p" data-group-id="2924539120-2">)</span><span class="w">
+</span><span class="no">nil</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">image_url</span><span class="p" data-group-id="2924539120-4">(</span><span class="p" data-group-id="2924539120-5">%{</span><span class="ss">profile</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2924539120-6">%{</span><span class="ss">image</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2924539120-7">%{</span><span class="ss">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="p" data-group-id="2924539120-7">}</span><span class="p" data-group-id="2924539120-6">}</span><span class="p" data-group-id="2924539120-5">}</span><span class="p" data-group-id="2924539120-4">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">image_url</span><span class="p" data-group-id="2924539120-8">(</span><span class="p" data-group-id="2924539120-9">%{</span><span class="ss">image</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2924539120-10">%{</span><span class="ss">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="p" data-group-id="2924539120-10">}</span><span class="p" data-group-id="2924539120-9">}</span><span class="p" data-group-id="2924539120-8">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">image_url</span><span class="p" data-group-id="2924539120-11">(</span><span class="p" data-group-id="2924539120-12">%{</span><span class="ss">icon</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2924539120-13">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="p" data-group-id="2924539120-13">}</span><span class="p" data-group-id="2924539120-12">}</span><span class="p" data-group-id="2924539120-11">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">image_url</span><span class="p" data-group-id="2924539120-14">(</span><span class="p" data-group-id="2924539120-15">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="p" data-group-id="2924539120-15">}</span><span class="p" data-group-id="2924539120-14">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">image_url</span><span class="p" data-group-id="2924539120-16">(</span><span class="p" data-group-id="2924539120-17">%{</span><span class="ss">image_id</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;image123&quot;</span><span class="p" data-group-id="2924539120-17">}</span><span class="p" data-group-id="2924539120-16">)</span><span class="w">
+</span><span class="c1"># Assume Files.ImageUploader.remote_url/1 returns &quot;http://example.com/image123.png&quot;</span><span class="w">
+</span><span class="s">&quot;http://example.com/image123.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">image_url</span><span class="p" data-group-id="2924539120-18">(</span><span class="p" data-group-id="2924539120-19">%{</span><span class="ss">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="p" data-group-id="2924539120-19">}</span><span class="p" data-group-id="2924539120-18">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/image.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">image_url</span><span class="p" data-group-id="2924539120-20">(</span><span class="p" data-group-id="2924539120-21">%{</span><span class="ss">profile</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2924539120-22">%{</span><span class="ss">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/profile_image.png&quot;</span><span class="p" data-group-id="2924539120-22">}</span><span class="p" data-group-id="2924539120-21">}</span><span class="p" data-group-id="2924539120-20">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/profile_image.png&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">image_url</span><span class="p" data-group-id="2924539120-23">(</span><span class="p" data-group-id="2924539120-24">%{</span><span class="ss">nonexistent_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p" data-group-id="2924539120-24">}</span><span class="p" data-group-id="2924539120-23">)</span><span class="w">
+</span><span class="no">nil</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="maybe_dominant_color/4">
+
+    <span id="maybe_dominant_color/1"></span>
+
+    <span id="maybe_dominant_color/2"></span>
+
+    <span id="maybe_dominant_color/3"></span>
+
+  <div class="detail-header">
+    <a href="#maybe_dominant_color/4" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">maybe_dominant_color(user, avatar_url \\ nil, banner_url \\ nil, banner_fallback \\ nil)</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L468" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Determines the dominant color for a given user’s avatar or banner.</p><h2 id="maybe_dominant_color/4-examples" class="section-heading"><a href="#maybe_dominant_color/4-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">maybe_dominant_color</span><span class="p" data-group-id="6867181054-1">(</span><span class="p" data-group-id="6867181054-2">%{</span><span class="ss">profile</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6867181054-3">%{</span><span class="ss">icon</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/avatar.png&quot;</span><span class="p" data-group-id="6867181054-3">}</span><span class="p" data-group-id="6867181054-2">}</span><span class="p" data-group-id="6867181054-1">)</span><span class="w">
+</span><span class="s">&quot;#AA4203&quot;</span><span class="w"> </span><span class="c1"># Example dominant color</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">maybe_dominant_color</span><span class="p" data-group-id="6867181054-4">(</span><span class="p" data-group-id="6867181054-5">%{</span><span class="ss">profile</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6867181054-6">%{</span><span class="ss">icon</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/avatar.png&quot;</span><span class="p" data-group-id="6867181054-6">}</span><span class="p" data-group-id="6867181054-5">}</span><span class="p">,</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;http://example.com/banner.png&quot;</span><span class="p" data-group-id="6867181054-4">)</span><span class="w">
+</span><span class="s">&quot;#AA4203&quot;</span><span class="w"> </span><span class="c1"># Example dominant color</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">maybe_dominant_color</span><span class="p" data-group-id="6867181054-7">(</span><span class="p" data-group-id="6867181054-8">%{</span><span class="ss">profile</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6867181054-9">%{</span><span class="ss">icon</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/avatar.png&quot;</span><span class="p" data-group-id="6867181054-9">}</span><span class="p" data-group-id="6867181054-8">}</span><span class="p">,</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;/images/bonfires.png&quot;</span><span class="p" data-group-id="6867181054-7">)</span><span class="w">
+</span><span class="s">&quot;#AA4203&quot;</span><span class="w"> </span><span class="c1"># Example dominant color</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">maybe_dominant_color</span><span class="p" data-group-id="6867181054-10">(</span><span class="p" data-group-id="6867181054-11">%{</span><span class="ss">profile</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="6867181054-12">%{</span><span class="ss">icon</span><span class="p">:</span><span class="w"> </span><span class="no">nil</span><span class="p" data-group-id="6867181054-12">}</span><span class="p" data-group-id="6867181054-11">}</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;http://example.com/banner.png&quot;</span><span class="p" data-group-id="6867181054-10">)</span><span class="w">
+</span><span class="no">nil</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="media_url/1">
+
+  <div class="detail-header">
+    <a href="#media_url/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">media_url(media)</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L49" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Takes a Media map (or an object containing one) and returns a URL for the media.</p><h2 id="media_url/1-examples" class="section-heading"><a href="#media_url/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">media_url</span><span class="p" data-group-id="7650114680-1">(</span><span class="p" data-group-id="7650114680-2">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://example.com/image.jpg&quot;</span><span class="p" data-group-id="7650114680-2">}</span><span class="p" data-group-id="7650114680-1">)</span><span class="w">
+</span><span class="s">&quot;http://example.com/image.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">media_url</span><span class="p" data-group-id="7650114680-3">(</span><span class="p" data-group-id="7650114680-4">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;remote.jpg&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">metadata</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7650114680-5">%{</span><span class="s">&quot;module&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;MyModule&quot;</span><span class="p" data-group-id="7650114680-5">}</span><span class="p" data-group-id="7650114680-4">}</span><span class="p" data-group-id="7650114680-3">)</span><span class="w">
+</span><span class="c1"># Assume MyModule.remote_url/1 is defined and returns &quot;http://example.com/remote.jpg&quot;</span><span class="w">
+</span><span class="s">&quot;http://example.com/remote.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">media_url</span><span class="p" data-group-id="7650114680-6">(</span><span class="p" data-group-id="7650114680-7">%{</span><span class="ss">media_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;image/jpeg&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;image.jpg&quot;</span><span class="p" data-group-id="7650114680-7">}</span><span class="p" data-group-id="7650114680-6">)</span><span class="w">
+</span><span class="s">&quot;http://image.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">media_url</span><span class="p" data-group-id="7650114680-8">(</span><span class="p" data-group-id="7650114680-9">%{</span><span class="ss">media_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;text/plain&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;document.txt&quot;</span><span class="p" data-group-id="7650114680-9">}</span><span class="p" data-group-id="7650114680-8">)</span><span class="w">
+</span><span class="s">&quot;http://document.txt&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">media_url</span><span class="p" data-group-id="7650114680-10">(</span><span class="p" data-group-id="7650114680-11">%{</span><span class="ss">changes</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7650114680-12">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://changed.example.com/image.jpg&quot;</span><span class="p" data-group-id="7650114680-12">}</span><span class="p" data-group-id="7650114680-11">}</span><span class="p" data-group-id="7650114680-10">)</span><span class="w">
+</span><span class="s">&quot;http://changed.example.com/image.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">media_url</span><span class="p" data-group-id="7650114680-13">(</span><span class="p" data-group-id="7650114680-14">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;image.jpg&quot;</span><span class="p" data-group-id="7650114680-14">}</span><span class="p" data-group-id="7650114680-13">)</span><span class="w">
+</span><span class="s">&quot;http://image.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">media_url</span><span class="p" data-group-id="7650114680-15">(</span><span class="p" data-group-id="7650114680-16">%{</span><span class="ss">media</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7650114680-17">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://nested.example.com/image.jpg&quot;</span><span class="p" data-group-id="7650114680-17">}</span><span class="p" data-group-id="7650114680-16">}</span><span class="p" data-group-id="7650114680-15">)</span><span class="w">
+</span><span class="s">&quot;http://nested.example.com/image.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">media_url</span><span class="p" data-group-id="7650114680-18">(</span><span class="p" data-group-id="7650114680-19">%{</span><span class="ss">nonexistent_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p" data-group-id="7650114680-19">}</span><span class="p" data-group-id="7650114680-18">)</span><span class="w">
+</span><span class="no">nil</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="read_tar_files/3">
+
+    <span id="read_tar_files/2"></span>
+
+  <div class="detail-header">
+    <a href="#read_tar_files/3" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">read_tar_files(archive, file_or_files, opts \\ [:compressed, :verbose])</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L532" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Reads specific files from a tar archive and returns their contents.</p><h2 id="read_tar_files/3-examples" class="section-heading"><a href="#read_tar_files/3-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">read_tar_files</span><span class="p" data-group-id="6419911265-1">(</span><span class="s">&quot;path/to/archive.tar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;file1.txt&quot;</span><span class="p" data-group-id="6419911265-1">)</span><span class="w">
+</span><span class="p" data-group-id="6419911265-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;file1 contents&quot;</span><span class="p" data-group-id="6419911265-2">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_tar_files</span><span class="p" data-group-id="6419911265-3">(</span><span class="s">&quot;path/to/archive.tar&quot;</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6419911265-4">[</span><span class="s">&quot;file1.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;file2.txt&quot;</span><span class="p" data-group-id="6419911265-4">]</span><span class="p" data-group-id="6419911265-3">)</span><span class="w">
+</span><span class="p" data-group-id="6419911265-5">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6419911265-6">[</span><span class="s">&quot;file1 contents&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;file2 contents&quot;</span><span class="p" data-group-id="6419911265-6">]</span><span class="p" data-group-id="6419911265-5">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_tar_files</span><span class="p" data-group-id="6419911265-7">(</span><span class="s">&quot;path/to/nonexistent.tar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;file1.txt&quot;</span><span class="p" data-group-id="6419911265-7">)</span><span class="w">
+</span><span class="p" data-group-id="6419911265-8">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;File not found&quot;</span><span class="p" data-group-id="6419911265-8">}</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">read_tar_files</span><span class="p" data-group-id="6419911265-9">(</span><span class="s">&quot;path/to/archive.tar&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;nonexistent_file.txt&quot;</span><span class="p" data-group-id="6419911265-9">)</span><span class="w">
+</span><span class="p" data-group-id="6419911265-10">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;File not found&quot;</span><span class="p" data-group-id="6419911265-10">}</span></code></pre>
+  </section>
+</section>
+<section class="detail" id="thumbnail_url/1">
+
+  <div class="detail-header">
+    <a href="#thumbnail_url/1" class="detail-link" data-no-tooltip="" aria-label="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+    </a>
+    <div class="heading-with-actions">
+      <h1 class="signature" translate="no">thumbnail_url(media)</h1>
+
+
+        <a href="https://github.com/bonfire-networks/bonfire_common/blob/main/lib/media.ex#L120" class="icon-action" rel="help" aria-label="View Source">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  </div>
+
+  <section class="docstring">
+
+<p>Takes a Media map (or an object containing one) and returns the thumbnail's URL.</p><h2 id="thumbnail_url/1-examples" class="section-heading"><a href="#thumbnail_url/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">thumbnail_url</span><span class="p" data-group-id="0613037451-1">(</span><span class="p" data-group-id="0613037451-2">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;thumbnail.jpg&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">metadata</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0613037451-3">%{</span><span class="s">&quot;module&quot;</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="s">&quot;MyModule&quot;</span><span class="p" data-group-id="0613037451-3">}</span><span class="p" data-group-id="0613037451-2">}</span><span class="p" data-group-id="0613037451-1">)</span><span class="w">
+</span><span class="c1"># Assume MyModule.remote_url/2 with :thumbnail returns &quot;http://example.com/thumbnail.jpg&quot;</span><span class="w">
+</span><span class="s">&quot;http://example.com/thumbnail.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">thumbnail_url</span><span class="p" data-group-id="0613037451-4">(</span><span class="p" data-group-id="0613037451-5">%{</span><span class="ss">media_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;image/jpeg&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;thumbnail.jpg&quot;</span><span class="p" data-group-id="0613037451-5">}</span><span class="p" data-group-id="0613037451-4">)</span><span class="w">
+</span><span class="s">&quot;http://thumbnail.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">thumbnail_url</span><span class="p" data-group-id="0613037451-6">(</span><span class="p" data-group-id="0613037451-7">%{</span><span class="ss">media_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;video/mp4&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;video.mpeg&quot;</span><span class="p" data-group-id="0613037451-7">}</span><span class="p" data-group-id="0613037451-6">)</span><span class="w">
+</span><span class="c1"># Assume Files.VideoUploader.remote_url/2 with :thumbnail returns &quot;http://video-thumbnail.jpg&quot;</span><span class="w">
+</span><span class="s">&quot;http://video-thumbnail.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">thumbnail_url</span><span class="p" data-group-id="0613037451-8">(</span><span class="p" data-group-id="0613037451-9">%{</span><span class="ss">path</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;document.pdf&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">media_type</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;document&quot;</span><span class="p" data-group-id="0613037451-9">}</span><span class="p" data-group-id="0613037451-8">)</span><span class="w">
+</span><span class="c1"># Assume Files.DocumentUploader.remote_url/2 with :thumbnail returns &quot;http://document-thumbnail.jpg&quot;</span><span class="w">
+</span><span class="s">&quot;http://document-thumbnail.jpg&quot;</span><span class="w">
+
+</span><span class="gp unselectable">iex&gt; </span><span class="n">thumbnail_url</span><span class="p" data-group-id="0613037451-10">(</span><span class="p" data-group-id="0613037451-11">%{</span><span class="ss">nonexistent_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="p" data-group-id="0613037451-11">}</span><span class="p" data-group-id="0613037451-10">)</span><span class="w">
+</span><span class="no">nil</span></code></pre>
+  </section>
+</section>
+
+    </div>
+  </section>
+
+    <footer class="footer">
+      <p>
+
+        <span class="line">
+          <button class="a-main footer-button display-quick-switch" title="Search HexDocs packages">
+            Search HexDocs
+          </button>
+
+            <a href="Bonfire.epub" title="ePub version">
+              Download ePub version
+            </a>
+
+        </span>
+      </p>
+
+      <p class="built-using">
+        Built using
+        <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener" translate="no">ExDoc</a> (v0.38.4) for the
+
+          <a href="https://elixir-lang.org" title="Elixir" target="_blank" translate="no">Elixir programming language</a>
+
+      </p>
+
+    </footer>
+  </div>
+</main>
+</div>
+
+  </body>
+</html>
