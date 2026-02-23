@@ -277,11 +277,11 @@ Bonfire
 
       </div>
 
-<p>Actually deletes an entry from the database.</p><h2 id="hard_delete/1-examples" class="section-heading"><a href="#hard_delete/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">hard_delete</span><span class="p" data-group-id="0364857168-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="0364857168-1">)</span><span class="w">
-</span><span class="p" data-group-id="0364857168-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">some_entry</span><span class="p" data-group-id="0364857168-2">}</span><span class="w">
+<p>Actually deletes an entry from the database.</p><h2 id="hard_delete/1-examples" class="section-heading"><a href="#hard_delete/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">hard_delete</span><span class="p" data-group-id="8730483031-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="8730483031-1">)</span><span class="w">
+</span><span class="p" data-group-id="8730483031-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">some_entry</span><span class="p" data-group-id="8730483031-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">hard_delete</span><span class="p" data-group-id="0364857168-3">(</span><span class="n">non_existent_entry</span><span class="p" data-group-id="0364857168-3">)</span><span class="w">
-</span><span class="p" data-group-id="0364857168-4">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="ss">:deletion_error</span><span class="p" data-group-id="0364857168-4">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">hard_delete</span><span class="p" data-group-id="8730483031-3">(</span><span class="n">non_existent_entry</span><span class="p" data-group-id="8730483031-3">)</span><span class="w">
+</span><span class="p" data-group-id="8730483031-4">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="ss">:deletion_error</span><span class="p" data-group-id="8730483031-4">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="hard_delete!/1">
@@ -309,10 +309,10 @@ Bonfire
 
       </div>
 
-<p>Actually deletes an entry from the database, or throws an error.</p><h2 id="hard_delete!/1-examples" class="section-heading"><a href="#hard_delete!/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">hard_delete!</span><span class="p" data-group-id="7185248982-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="7185248982-1">)</span><span class="w">
+<p>Actually deletes an entry from the database, or throws an error.</p><h2 id="hard_delete!/1-examples" class="section-heading"><a href="#hard_delete!/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">hard_delete!</span><span class="p" data-group-id="9769499923-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="9769499923-1">)</span><span class="w">
 </span><span class="n">some_entry</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">hard_delete!</span><span class="p" data-group-id="7185248982-2">(</span><span class="n">non_existent_entry</span><span class="p" data-group-id="7185248982-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">hard_delete!</span><span class="p" data-group-id="9769499923-2">(</span><span class="n">non_existent_entry</span><span class="p" data-group-id="9769499923-2">)</span><span class="w">
 </span><span class="gt">** (RuntimeError) :deletion_error</span></code></pre>
   </section>
 </section>
@@ -363,11 +363,11 @@ Bonfire
 
       </div>
 
-<p>Marks an entry as deleted in the database.</p><h2 id="soft_delete/1-examples" class="section-heading"><a href="#soft_delete/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete</span><span class="p" data-group-id="1592914720-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="1592914720-1">)</span><span class="w">
-</span><span class="p" data-group-id="1592914720-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">some_entry</span><span class="p" data-group-id="1592914720-2">}</span><span class="w">
+<p>Marks an entry as deleted in the database.</p><h2 id="soft_delete/1-examples" class="section-heading"><a href="#soft_delete/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete</span><span class="p" data-group-id="9930339093-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="9930339093-1">)</span><span class="w">
+</span><span class="p" data-group-id="9930339093-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">some_entry</span><span class="p" data-group-id="9930339093-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete</span><span class="p" data-group-id="1592914720-3">(</span><span class="n">non_existent_entry</span><span class="p" data-group-id="1592914720-3">)</span><span class="w">
-</span><span class="p" data-group-id="1592914720-4">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="ss">:deletion_error</span><span class="p" data-group-id="1592914720-4">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete</span><span class="p" data-group-id="9930339093-3">(</span><span class="n">non_existent_entry</span><span class="p" data-group-id="9930339093-3">)</span><span class="w">
+</span><span class="p" data-group-id="9930339093-4">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="ss">:deletion_error</span><span class="p" data-group-id="9930339093-4">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="soft_delete!/1">
@@ -395,10 +395,10 @@ Bonfire
 
       </div>
 
-<p>Marks an entry as deleted in the database or throws an error.</p><h2 id="soft_delete!/1-examples" class="section-heading"><a href="#soft_delete!/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete!</span><span class="p" data-group-id="6986192744-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="6986192744-1">)</span><span class="w">
+<p>Marks an entry as deleted in the database or throws an error.</p><h2 id="soft_delete!/1-examples" class="section-heading"><a href="#soft_delete!/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete!</span><span class="p" data-group-id="2769726104-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="2769726104-1">)</span><span class="w">
 </span><span class="n">some_entry</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete!</span><span class="p" data-group-id="6986192744-2">(</span><span class="n">non_existent_entry</span><span class="p" data-group-id="6986192744-2">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete!</span><span class="p" data-group-id="2769726104-2">(</span><span class="n">non_existent_entry</span><span class="p" data-group-id="2769726104-2">)</span><span class="w">
 </span><span class="gt">** (RuntimeError) :deletion_error</span></code></pre>
   </section>
 </section>
@@ -427,11 +427,11 @@ Bonfire
 
   <section class="docstring">
 
-<p>Creates a changeset for marking an entity as deleted.</p><h2 id="soft_delete_changeset/4-examples" class="section-heading"><a href="#soft_delete_changeset/4-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete_changeset</span><span class="p" data-group-id="4373335171-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="4373335171-1">)</span><span class="w">
-</span><span class="p" data-group-id="4373335171-2">%</span><span class="nc" data-group-id="4373335171-2">Ecto.Changeset</span><span class="p" data-group-id="4373335171-2">{</span><span class="n">...</span><span class="p" data-group-id="4373335171-2">}</span><span class="w">
+<p>Creates a changeset for marking an entity as deleted.</p><h2 id="soft_delete_changeset/4-examples" class="section-heading"><a href="#soft_delete_changeset/4-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete_changeset</span><span class="p" data-group-id="1129382471-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="1129382471-1">)</span><span class="w">
+</span><span class="p" data-group-id="1129382471-2">%</span><span class="nc" data-group-id="1129382471-2">Ecto.Changeset</span><span class="p" data-group-id="1129382471-2">{</span><span class="n">...</span><span class="p" data-group-id="1129382471-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete_changeset</span><span class="p" data-group-id="4373335171-3">(</span><span class="p" data-group-id="4373335171-4">{</span><span class="nc">SomeSchema</span><span class="p">,</span><span class="w"> </span><span class="n">some_entry</span><span class="p" data-group-id="4373335171-4">}</span><span class="p">,</span><span class="w"> </span><span class="ss">:deleted_at</span><span class="p">,</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;was already deleted&quot;</span><span class="p" data-group-id="4373335171-3">)</span><span class="w">
-</span><span class="p" data-group-id="4373335171-5">%</span><span class="nc" data-group-id="4373335171-5">Ecto.Changeset</span><span class="p" data-group-id="4373335171-5">{</span><span class="n">...</span><span class="p" data-group-id="4373335171-5">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">soft_delete_changeset</span><span class="p" data-group-id="1129382471-3">(</span><span class="p" data-group-id="1129382471-4">{</span><span class="nc">SomeSchema</span><span class="p">,</span><span class="w"> </span><span class="n">some_entry</span><span class="p" data-group-id="1129382471-4">}</span><span class="p">,</span><span class="w"> </span><span class="ss">:deleted_at</span><span class="p">,</span><span class="w"> </span><span class="no">nil</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;was already deleted&quot;</span><span class="p" data-group-id="1129382471-3">)</span><span class="w">
+</span><span class="p" data-group-id="1129382471-5">%</span><span class="nc" data-group-id="1129382471-5">Ecto.Changeset</span><span class="p" data-group-id="1129382471-5">{</span><span class="n">...</span><span class="p" data-group-id="1129382471-5">}</span></code></pre>
   </section>
 </section>
 <section class="detail" id="undelete/1">
@@ -453,11 +453,11 @@ Bonfire
 
   <section class="docstring">
 
-<p>Marks an entry as not deleted.</p><h2 id="undelete/1-examples" class="section-heading"><a href="#undelete/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">undelete</span><span class="p" data-group-id="2304616741-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="2304616741-1">)</span><span class="w">
-</span><span class="p" data-group-id="2304616741-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">some_entry</span><span class="p" data-group-id="2304616741-2">}</span><span class="w">
+<p>Marks an entry as not deleted.</p><h2 id="undelete/1-examples" class="section-heading"><a href="#undelete/1-examples" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i></a><span class="text">Examples</span></h2><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">undelete</span><span class="p" data-group-id="8029200791-1">(</span><span class="n">some_entry</span><span class="p" data-group-id="8029200791-1">)</span><span class="w">
+</span><span class="p" data-group-id="8029200791-2">{</span><span class="ss">:ok</span><span class="p">,</span><span class="w"> </span><span class="n">some_entry</span><span class="p" data-group-id="8029200791-2">}</span><span class="w">
 
-</span><span class="gp unselectable">iex&gt; </span><span class="n">undelete</span><span class="p" data-group-id="2304616741-3">(</span><span class="n">non_existent_entry</span><span class="p" data-group-id="2304616741-3">)</span><span class="w">
-</span><span class="p" data-group-id="2304616741-4">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="ss">:deletion_error</span><span class="p" data-group-id="2304616741-4">}</span></code></pre>
+</span><span class="gp unselectable">iex&gt; </span><span class="n">undelete</span><span class="p" data-group-id="8029200791-3">(</span><span class="n">non_existent_entry</span><span class="p" data-group-id="8029200791-3">)</span><span class="w">
+</span><span class="p" data-group-id="8029200791-4">{</span><span class="ss">:error</span><span class="p">,</span><span class="w"> </span><span class="ss">:deletion_error</span><span class="p" data-group-id="8029200791-4">}</span></code></pre>
   </section>
 </section>
 
